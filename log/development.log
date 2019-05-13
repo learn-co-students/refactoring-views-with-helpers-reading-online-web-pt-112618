@@ -24,3 +24,74 @@
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Testing"], ["description", "testing"], ["created_at", "2016-01-26 15:06:03.106369"], ["updated_at", "2016-01-26 15:06:03.106369"]]
   [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Started GET "/posts" for ::1 at 2019-05-12 20:51:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (19.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (24.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 1848ms (Views: 1769.1ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/posts/18" for ::1 at 2019-05-12 20:51:23 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+Completed 404 Not Found in 45ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=18):
+  
+app/controllers/posts_controller.rb:7:in `show'
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (179.1ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_noravogt__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2905145549591171152_70248939321220 at /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (235.7ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/noravogt/.rvm/gems/ruby-2.5.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (435.5ms)
+Started GET "/posts/1" for ::1 at 2019-05-12 20:51:26 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 72ms (Views: 67.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for ::1 at 2019-05-12 20:52:09 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 181ms (Views: 175.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/" for ::1 at 2019-05-12 20:53:19 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 362ms (Views: 356.3ms | ActiveRecord: 0.2ms)
+
+
